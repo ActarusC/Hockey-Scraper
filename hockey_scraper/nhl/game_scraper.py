@@ -60,16 +60,19 @@ def get_players_json(game_json):
     awayid = game_json['awayTeam']['id']
 
     for player in game_json['rosterSpots']:
+        playerFn = str(player["firstName"]['default'])
+        playerLn = str(player["lastName"]['default'])
+
         if player['teamId'] == homeid:
-            players["Home"][str(player["firstName"] + " " + player["lastName"]).upper()] = {
+            players["Home"][str(playerFn + " " + playerLn).upper()] = {
                 "id": player['playerId'], 
-                "last_name": player["lastName"].upper()
+                "last_name": playerLn.upper()
             }
 
         if player['teamId'] == awayid:
-            players["Away"][str(player["firstName"] + " " + player["lastName"]).upper()] = {
+            players["Away"][str(playerFn + " " + playerLn).upper()] = {
                 "id": player['playerId'],
-                "last_name": player["lastName"].upper()
+                "last_name": playerLn.upper()
             }
     
     return players
