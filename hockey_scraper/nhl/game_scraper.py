@@ -17,6 +17,7 @@ broken_pbp_games = []
 players_missing_ids = []
 missing_coords = []
 
+print("Version PC de game_sraper")
 
 pbp_columns = [
     'Game_Id', 'Date', 'Period', 'Event', 'Description', 'Time_Elapsed', 'Seconds_Elapsed', 'Strength',
